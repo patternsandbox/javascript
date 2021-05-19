@@ -1,8 +1,7 @@
 {
-  "name": "js",
+  "name": "javascript",
   "version": "1.0.0",
   "description": "JavaScript design pattern",
-  "main": "index.js",
   "scripts": {
     "lint": "npx eslint . --ext .js --fix",
     "test": "npx jest",
@@ -13,7 +12,7 @@
     "url": "git+https://github.com/patternsandbox/js.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/patternsandbox/js/issues"
   },
@@ -23,11 +22,12 @@
     "@babel/core": "7.14.3",
     "@babel/plugin-transform-runtime": "7.14.3",
     "@babel/preset-env": "7.14.2",
+    "@babel/preset-typescript": "7.13.0",
     "@babel/register": "7.13.16",
     "@babel/runtime": "7.14.0",
     "@types/jest": "26.0.23",
     "@types/node": "13.13.52",
-    "babel-jest": "^26.6.3",
+    "babel-jest": "26.6.3",
     "eslint": "7.8.1",
     "eslint-config-airbnb-base": "14.2.0",
     "eslint-config-prettier": "6.11.0",
@@ -43,7 +43,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged --allow-empty --verbose"
+      "pre-commit": "npm run pretty && lint-staged --allow-empty --verbose && npm run test"
     }
   },
   "lint-staged": {
