@@ -1,10 +1,10 @@
-export default class CarBuilder {
+export default class Car {
   constructor(build) {
     this.body = build.body;
     this.make = build.make;
     this.model = build.model;
     this.camera = build.camera || false;
-    this.navigation = build.navigation || false;
+    this.sunroof = build.sunroof || false;
   }
 
   static get Builder() {
@@ -28,13 +28,13 @@ export default class CarBuilder {
         return this;
       }
 
-      withNavigation(navigation) {
-        this.navigation = navigation;
+      withSunroof(sunroof) {
+        this.sunroof = sunroof;
         return this;
       }
 
       build() {
-        return new CarBuilder(this);
+        return new Car(this);
       }
     }
     return Builder;

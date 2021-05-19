@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "npx eslint . --ext .js --fix",
-    "test": "npx jest"
+    "test": "npx jest",
+    "pretty": "npx prettier --no-config './**/*.{ts,js,json}' --write"
   },
   "repository": {
     "type": "git",
