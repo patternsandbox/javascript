@@ -1,11 +1,12 @@
-import CarBuilder from ".";
+import CarBuilder from "./index";
 
 test("Build a Honda SUV with with sunroof", () => {
-  const car = new CarBuilder.Builder("SUV")
-    .withMake("Honda")
-    .withModel("CR-V")
-    .withCamera(false)
-    .withSunroof(true)
+  const car = new CarBuilder()
+    .setBody("SUV")
+    .setMake("Honda")
+    .setModel("CR-V")
+    .setCamera(false)
+    .setSunroof(true)
     .build();
 
   expect(car.camera).toBeFalsy();
@@ -13,11 +14,12 @@ test("Build a Honda SUV with with sunroof", () => {
 });
 
 test("Build Honda Camry with camera", () => {
-  const car = new CarBuilder.Builder("SUV")
-    .withMake("Honda")
-    .withModel("Camry")
-    .withCamera(true)
-    .withSunroof(false)
+  const car = new CarBuilder()
+    .setBody("Sedan")
+    .setMake("Honda")
+    .setModel("Camry")
+    .setCamera(true)
+    .setSunroof(false)
     .build();
 
   expect(car.camera).toBeTruthy();

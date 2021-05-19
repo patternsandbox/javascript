@@ -1,7 +1,7 @@
-import Calculator from ".";
+import Calculator from "./index";
 
 test("Calculate total", () => {
-  const { result } = new Calculator.Builder()
+  const { result } = new Calculator()
     .add(100)
     .add(100)
     .divide(2)

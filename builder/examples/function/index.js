@@ -1,48 +1,37 @@
-const Car = (build) => {
+function Car(build) {
   this.body = build.body;
-  this.make = build.make;
+  this.body = build.make;
   this.model = build.model;
   this.camera = build.camera || false;
   this.sunroof = build.sunroof || false;
-};
+}
 
-const CarBuilder = () => {
-  this.car = new Car();
-
-  this.setBody = (body) => {
-    this.car.body = body;
-    return this;
+function CarBuilder() {
+  return {
+    setBody(value) {
+      this.body = value;
+      return this;
+    },
+    setMake(value) {
+      this.make = value;
+      return this;
+    },
+    setModel(value) {
+      this.model = value;
+      return this;
+    },
+    setCamera(value) {
+      this.camera = value;
+      return this;
+    },
+    setSunroof(value) {
+      this.sunroof = value;
+      return this;
+    },
+    build() {
+      return new Car(this);
+    },
   };
-
-  this.build = () => {
-    return new Car(this);
-  };
-
-  // return {
-  //   setBody: (body) => {
-  //     this.body = body;
-  //     return this;
-  //   },
-  //   setMake: (make) => {
-  //     this.make = make;
-  //     return this;
-  //   },
-  //   setModel: (model) => {
-  //     this.model = model;
-  //     return this;
-  //   },
-  //   setCamera: (camera) => {
-  //     this.camera = camera;
-  //     return this;
-  //   },
-  //   setSunroof: (sunroof) => {
-  //     this.sunroof = sunroof;
-  //     return this;
-  //   },
-  //   build: () => {
-  //     return new Car(this);
-  //   },
-  // };
-};
+}
 
 export default CarBuilder;

@@ -1,39 +1,35 @@
-export default class Calculator {
-  constructor(result) {
-    this.result = result;
+class Calculator {
+  constructor(builder) {
+    this.result = builder.result;
+  }
+}
+
+export default class CalculatorBuilder {
+  constructor() {
+    this.result = 0;
   }
 
-  static get Builder() {
-    class Builder {
-      constructor() {
-        this.result = 0;
-      }
+  add(number) {
+    this.result += number;
+    return this;
+  }
 
-      add(number) {
-        this.result += number;
-        return this;
-      }
+  subtract(number) {
+    this.result -= number;
+    return this;
+  }
 
-      subtract(number) {
-        this.result -= number;
-        return this;
-      }
+  divide(number) {
+    this.result /= number;
+    return this;
+  }
 
-      divide(number) {
-        this.result /= number;
-        return this;
-      }
+  multiply(number) {
+    this.result *= number;
+    return this;
+  }
 
-      multiply(number) {
-        this.result *= number;
-        return this;
-      }
-
-      compute() {
-        return new Calculator(this.result);
-      }
-    }
-
-    return Builder;
+  compute() {
+    return new Calculator(this);
   }
 }

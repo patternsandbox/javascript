@@ -1,4 +1,4 @@
-export default class Car {
+class Car {
   constructor(build) {
     this.body = build.body;
     this.make = build.make;
@@ -6,37 +6,35 @@ export default class Car {
     this.camera = build.camera || false;
     this.sunroof = build.sunroof || false;
   }
+}
 
-  static get Builder() {
-    class Builder {
-      constructor(body) {
-        this.body = body;
-      }
+export default class CarBuilder {
+  setBody(body) {
+    this.body = body;
+    return this;
+  }
 
-      withMake(make) {
-        this.make = make;
-        return this;
-      }
+  setMake(make) {
+    this.make = make;
+    return this;
+  }
 
-      withModel(model) {
-        this.model = model;
-        return this;
-      }
+  setModel(model) {
+    this.model = model;
+    return this;
+  }
 
-      withCamera(camera) {
-        this.camera = camera;
-        return this;
-      }
+  setCamera(camera) {
+    this.camera = camera;
+    return this;
+  }
 
-      withSunroof(sunroof) {
-        this.sunroof = sunroof;
-        return this;
-      }
+  setSunroof(sunroof) {
+    this.sunroof = sunroof;
+    return this;
+  }
 
-      build() {
-        return new Car(this);
-      }
-    }
-    return Builder;
+  build() {
+    return new Car(this);
   }
 }
