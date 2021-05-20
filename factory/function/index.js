@@ -1,11 +1,11 @@
-const Truck = ({ engines, bed, sunroof, cab }) => {
+const Truck = function ({ engines, bed, sunroof, cab }) {
   this.engines = engines;
   this.bed = bed || "standard";
   this.sunroof = sunroof || false;
   this.cab = cab || "standard";
 };
 
-const Sedan = ({ engines, camera, sunroof, color }) => {
+const Sedan = function ({ engines, camera, sunroof, color }) {
   this.engines = engines;
   this.camera = camera || false;
   this.sunroof = sunroof || false;
@@ -13,10 +13,10 @@ const Sedan = ({ engines, camera, sunroof, color }) => {
 };
 const cars = { Truck, Sedan };
 
-const createCare = function (type, attributes) {
+const carFactory = function createCar(type, attributes) {
   const CarType = cars[type];
 
   return new CarType(attributes);
 };
 
-export default createCare;
+export default carFactory;
