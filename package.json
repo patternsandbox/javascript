@@ -4,7 +4,7 @@
   "description": "JavaScript design pattern",
   "scripts": {
     "lint": "npx eslint . --ext .js --fix",
-    "test": "npx jest",
+    "test": "npx jest --collect-coverage",
     "pretty": "npx prettier --no-config './**/*.{ts,js,json}' --write"
   },
   "repository": {

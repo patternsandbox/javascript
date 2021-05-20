@@ -12,3 +12,16 @@ test("make truck", () => {
 
   expect(truck.engines).toEqual(attributes.engines);
 });
+
+test("make sedan", () => {
+  const attributes = {
+    engines: "V8",
+    camera: true,
+    sunroof: true,
+    color: "white",
+  };
+
+  const truck = carFactory("Sedan", { ...attributes });
+
+  expect(truck.engines).toEqual(attributes.engines);
+});
