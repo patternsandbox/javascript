@@ -9,7 +9,7 @@ class Readme {
 export default class ReadmeBuilder {
   setTitle(name) {
     // multi-word pattern, its folder name should be separated by period
-    this.readme = `#${Utils.toTitleCase(name, ".")} Pattern`;
+    this.readme = `# ${Utils.toTitleCase(name, ".")} Pattern`;
     return this;
   }
 
