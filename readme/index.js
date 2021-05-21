@@ -9,8 +9,8 @@ const Logger = require("pino")({
 });
 
 patterns.forEach((pattern) => {
-  const { name } = docs[pattern];
-  const content = new ReadmeBuilder().setTitle(name);
+  const { name, summary } = docs[pattern];
+  const content = new ReadmeBuilder().setTitle(name).setSummary(summary);
   const writeReadmeFile = new WriteReadmeFile(name, content.readme);
   writeReadmeFile.write();
   Logger.info(`Write a README.md for ${name} pattern`);

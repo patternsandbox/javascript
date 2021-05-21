@@ -13,6 +13,11 @@ export default class ReadmeBuilder {
     return this;
   }
 
+  setSummary(summary) {
+    this.readme += `\n>${summary}`;
+    return this;
+  }
+
   build() {
     return new Readme(this);
   }
