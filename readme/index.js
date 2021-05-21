@@ -13,5 +13,5 @@ patterns.forEach((pattern) => {
   const content = new ReadmeBuilder().setTitle(name);
   const writeReadmeFile = new WriteReadmeFile(name, content.readme);
   writeReadmeFile.write();
-  Logger.info(`Write a read me for ${name} pattern`);
+  Logger.info(`Write a README.md for ${name} pattern`);
 });

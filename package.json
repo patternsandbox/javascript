@@ -5,7 +5,8 @@
   "scripts": {
     "lint": "npx eslint . --ext .json,.js --fix",
     "test": "npx jest --collect-coverage",
-    "pretty": "npx prettier --no-config './**/*.{ts,js,json}' --write"
+    "pretty": "npx prettier --no-config './**/*.{ts,js,json}' --write",
+    "build:readme": "npx babel-node readme/index.js"
   },
   "repository": {
     "type": "git",
