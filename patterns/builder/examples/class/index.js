@@ -1,6 +1,5 @@
 class Car {
   constructor(build) {
-    this.body = build.body;
     this.make = build.make;
     this.model = build.model;
     this.camera = build.camera || false;
@@ -9,11 +8,6 @@ class Car {
 }
 
 export default class CarBuilder {
-  setBody(body) {
-    this.body = body;
-    return this;
-  }
-
   setMake(make) {
     this.make = make;
     return this;

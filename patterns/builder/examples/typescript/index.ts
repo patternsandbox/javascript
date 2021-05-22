@@ -1,5 +1,4 @@
 interface ICar {
-  body: string;
   make: string;
   model: string;
   camera?: boolean;
@@ -19,17 +18,11 @@ export default class CarBuilder {
 
   constructor() {
     this.car = {
-      body: "",
       make: "",
       model: "",
       camera: false,
       sunroof: false,
     };
-  }
-
-  setBody(body) {
-    this.car.body = body;
-    return this;
   }
 
   setMake(make) {

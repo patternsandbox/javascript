@@ -31,7 +31,6 @@ The parameters in the constructor are reduced and served in a much more readable
 ```javascript
 class Car {
   constructor(build) {
-    this.body = build.body;
     this.make = build.make;
     this.model = build.model;
     this.camera = build.camera || false;
@@ -40,11 +39,6 @@ class Car {
 }
 
 export default class CarBuilder {
-  setBody(body) {
-    this.body = body;
-    return this;
-  }
-
   setMake(make) {
     this.make = make;
     return this;
@@ -71,13 +65,12 @@ export default class CarBuilder {
 }
 
 ```
-Listing 1: index.js
+*Listing 1: index.js*
 ```javascript
 import CarBuilder from "./index";
 
-test("Build a Honda SUV with with sunroof", () => {
+test("Build a Honda with with sunroof", () => {
   const car = new CarBuilder()
-    .setBody("SUV")
     .setMake("Honda")
     .setModel("CR-V")
     .setCamera(false)
@@ -88,26 +81,12 @@ test("Build a Honda SUV with with sunroof", () => {
   expect(car.sunroof).toBeTruthy();
 });
 
-test("Build Honda Camry with camera", () => {
-  const car = new CarBuilder()
-    .setBody("Sedan")
-    .setMake("Honda")
-    .setModel("Camry")
-    .setCamera(true)
-    .setSunroof(false)
-    .build();
-
-  expect(car.camera).toBeTruthy();
-  expect(car.sunroof).toBeFalsy();
-});
-
 ```
-Listing 2: test.js
+*Listing 2: test.js*
 
 ### 2. Function
 ```javascript
 function Car(build) {
-  this.body = build.body;
   this.body = build.make;
   this.model = build.model;
   this.camera = build.camera || false;
@@ -116,10 +95,6 @@ function Car(build) {
 
 function CarBuilder() {
   return {
-    setBody(value) {
-      this.body = value;
-      return this;
-    },
     setMake(value) {
       this.make = value;
       return this;
@@ -145,26 +120,12 @@ function CarBuilder() {
 export default CarBuilder;
 
 ```
-Listing 1: index.js
+*Listing 1: index.js*
 ```javascript
 import CarBuilder from "./index";
 
-test("Build a Honda SUV with with sunroof", () => {
-  const car = new CarBuilder()
-    .setBody("SUV")
-    .setMake("Honda")
-    .setModel("CR-V")
-    .setCamera(false)
-    .setSunroof(true)
-    .build();
-
-  expect(car.camera).toBeFalsy();
-  expect(car.sunroof).toBeTruthy();
-});
-
 test("Build Honda Camry with camera", () => {
   const car = new CarBuilder()
-    .setBody("Sedan")
     .setMake("Honda")
     .setModel("Camry")
     .setCamera(true)
@@ -176,7 +137,7 @@ test("Build Honda Camry with camera", () => {
 });
 
 ```
-Listing 2: test.js
+*Listing 2: test.js*
 
 ### 3. Sequential
 ```javascript
@@ -217,7 +178,7 @@ export default class CalculatorBuilder {
 }
 
 ```
-Listing 1: index.js
+*Listing 1: index.js*
 ```javascript
 import Calculator from "./index";
 
@@ -235,12 +196,11 @@ test("Calculate total", () => {
 });
 
 ```
-Listing 2: test.js
+*Listing 2: test.js*
 
 ### 4. Typescript
 ```javascript
 interface ICar {
-  body: string;
   make: string;
   model: string;
   camera?: boolean;
@@ -260,17 +220,11 @@ export default class CarBuilder {
 
   constructor() {
     this.car = {
-      body: "",
       make: "",
       model: "",
       camera: false,
       sunroof: false,
     };
-  }
-
-  setBody(body) {
-    this.car.body = body;
-    return this;
   }
 
   setMake(make) {
@@ -299,13 +253,12 @@ export default class CarBuilder {
 }
 
 ```
-Listing 1: index.ts
+*Listing 1: index.ts*
 ```javascript
 import CarBuilder from "./index.ts";
 
-test("Build a Honda SUV with with sunroof", () => {
+test("Build a Honda with with sunroof", () => {
   const build = new CarBuilder()
-    .setBody("SUV")
     .setMake("Honda")
     .setModel("CR-V")
     .setCamera(false)
@@ -317,22 +270,8 @@ test("Build a Honda SUV with with sunroof", () => {
   expect(car.sunroof).toBeTruthy();
 });
 
-test("Build Honda Camry with camera", () => {
-  const build = new CarBuilder()
-    .setBody("Sedan")
-    .setMake("Honda")
-    .setModel("Camry")
-    .setCamera(true)
-    .setSunroof(false)
-    .build();
-
-  const { car } = build;
-  expect(car.camera).toBeTruthy();
-  expect(car.sunroof).toBeFalsy();
-});
-
 ```
-Listing 2: test.js
+*Listing 2: test.js*
 
 ## References
 - [Jsmanifest]

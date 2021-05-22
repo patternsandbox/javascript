@@ -39,7 +39,7 @@ export default class Utils {
       example += "```javascript";
       example += `\n${data}\n`;
       example += "```";
-      example += `\nListing ${index + 1}: ${file}\n`;
+      example += `\n*Listing ${index + 1}: ${file}*\n`;
     });
 
     return example;

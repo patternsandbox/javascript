@@ -1,5 +1,4 @@
 function Car(build) {
-  this.body = build.body;
   this.body = build.make;
   this.model = build.model;
   this.camera = build.camera || false;
@@ -8,10 +7,6 @@ function Car(build) {
 
 function CarBuilder() {
   return {
-    setBody(value) {
-      this.body = value;
-      return this;
-    },
     setMake(value) {
       this.make = value;
       return this;
