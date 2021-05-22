@@ -7,7 +7,7 @@ const Logger = require("pino")({
 
 export default class WriteReadmeFile {
   constructor(pattern, data) {
-    this.path = path.resolve(__dirname, `../patterns/${pattern}/README.md`);
+    this.path = path.resolve(__dirname, `../../patterns/${pattern}/README.md`);
     this.content = data;
   }
 

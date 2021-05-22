@@ -1,2 +1,5 @@
 # Strategy Pattern
 >
+
+## References
+
