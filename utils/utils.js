@@ -1,3 +1,5 @@
+import { readdirSync, readFileSync } from "fs";
+
 export default class Utils {
   static toTitleCase(str, delimiter = ".") {
     return str
@@ -17,10 +19,29 @@ export default class Utils {
           link.substring(1, link.length - 1),
           "."
         );
-        formatted = formatted.replace(link, `Ref: [${trimmed}]`);
+        formatted = formatted.replace(link, `*Ref:* [${trimmed}]`);
       });
       return formatted;
     }
     return str;
+  }
+
+  static getExamples(name, ex) {
+    const path = `./patterns/${name}/examples/${ex}`;
+    const files = readdirSync(path);
+    let example = "";
+
+    files.forEach((file, index) => {
+      const data = readFileSync(
+        `./patterns/${name}/examples/${ex}/${file}`,
+        "utf8"
+      );
+      example += "```javascript";
+      example += `\n${data}\n`;
+      example += "```";
+      example += `\nListing ${index + 1}: ${file}\n`;
+    });
+
+    return example;
   }
 }

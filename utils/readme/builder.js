@@ -38,6 +38,16 @@ export default class ReadmeBuilder {
     return this;
   }
 
+  setExample(name, example) {
+    this.readme += `\n## Example\n`;
+    example.sort();
+    example.forEach((ex, index) => {
+      this.readme += `\n### ${index + 1}. ${Utils.toTitleCase(ex, ".")}\n`;
+      this.readme += Utils.getExamples(name, ex);
+    });
+    return this;
+  }
+
   setReference(refs) {
     this.readme += `\n## References\n`;
     const reference = { ...refs.javascript, ...refs.misc };
