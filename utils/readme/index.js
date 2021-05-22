@@ -9,10 +9,11 @@ const Logger = require("pino")({
 });
 
 patterns.forEach((pattern) => {
-  const { name, summary, refs, description } = docs[pattern];
+  const { name, summary, refs, description, problem } = docs[pattern];
   const content = new ReadmeBuilder()
     .setTitle(name)
     .setSummary(summary)
+    .setProblem(problem)
     .setDescription(description)
     .setReference(refs);
   // .build(); // TODO ...
