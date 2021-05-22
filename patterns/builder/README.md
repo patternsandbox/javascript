@@ -1,6 +1,16 @@
 # Builder Pattern
 >Builder pattern separate the complexities of the creation logic from the final representation.
 
+A builder pattern is a design pattern that lets us extract the object construction out of its own class (its representation) so that it can be used for multiple different representations. One advantage to using this pattern is that it lets us build objects with one operation on top of another where we don’t need to call all operations simultaneously, only the ones that are needed to produce a particular output. Ref: Ref: [Yash Sharma]
+
+Builder pattern separates the `construction` of complex object which involve `computing multiple sequential operations` from its `representation`. It produces different representations of an object using the same construct
+
+Builders allow us to construct complex objects by only specifying the type and content of the object, shielding us from the process of creating or representing the object explicitly. Ref. Ref: [Addy Osmani]
+
+The builder design pattern is self-explanatory. It creates objects but it really shines when there is a need to create multiple objects with some similarities. A builder avoids the necessity to create myriad subclasses from a base class or big constructors with a lot of conditional logic using method chaining. Ref: Ref: [Log Rocket Eslam Hefnawy]
+
+The parameters in the constructor are reduced and served in a much more readable way, and thus there is no need to pass in null for optional parameters to the constructor. Ref. Ref: [Itay Elgazar]
+
 ## References
 - [Jsmanifest]
 - [Yash Sharma]
