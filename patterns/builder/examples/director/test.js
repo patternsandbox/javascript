@@ -1,4 +1,4 @@
-import { Director} from "./index";
+import { Director } from "./index";
 
 test("build entry level Audi", () => {
   const audi = new Director().buildEntryLevelAudi().build();

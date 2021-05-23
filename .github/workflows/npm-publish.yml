@@ -21,4 +21,4 @@ jobs:
       - run: npm run build:readme
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "CI auto commit"
+          push_options: '--force'
