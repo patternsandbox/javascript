@@ -72,6 +72,11 @@ export default class ReadmeBuilder {
     return this;
   }
 
+  setMainReadmeReference() {
+    this.readme += Utils.getMainReadmeReferences();
+    return this;
+  }
+
   build() {
     return new Readme(this);
   }

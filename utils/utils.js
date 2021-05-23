@@ -1,6 +1,9 @@
 import { readdirSync, readFileSync } from "fs";
 import * as docs from "@patternsandbox/docs";
 
+const patterns = readdirSync("./patterns");
+const regex = /\[(.*?)\]/g; // find words surround by []
+
 export default class Utils {
   static toTitleCase(str, delimiter = ".") {
     return str
@@ -10,8 +13,7 @@ export default class Utils {
   }
 
   static formatLink(str) {
-    const regex = /\[(.*?)\]/g; // find words surround by []
-    const links = str.match(regex);
+    const links = str ? str.match(regex) : undefined;
 
     if (links) {
       let formatted = str;
@@ -20,7 +22,7 @@ export default class Utils {
           link.substring(1, link.length - 1),
           "."
         );
-        formatted = formatted.replace(link, `*Ref:* [${trimmed}]`);
+        formatted = formatted.replace(link, `__Ref:__ [${trimmed}]`);
       });
       return formatted;
     }
@@ -47,7 +49,6 @@ export default class Utils {
   }
 
   static getPatternsSummary(type) {
-    const patterns = readdirSync("./patterns");
     let content = "";
     patterns.forEach((pattern) => {
       const { category, name, summary, problem, description } = docs[pattern];
@@ -58,12 +59,60 @@ export default class Utils {
         const formatted = this.formatLink(summary);
         content += `\n>${formatted}\n`;
         content += `\n#### Problem\n`;
-        content += problem[0];
+        content += this.formatLink(problem[0]);
         content += `\n#### Solution\n`;
-        content += description[0];
+        content += this.formatLink(description[0]);
         content += `\n\nFor more: [${name} pattern >>>](https://github.com/patternsandbox/javascript/tree/main/patterns/${name})`;
       }
     });
     return content;
+  }
+
+  static getMainReadmeReferences() {
+    let content = `\n## References\n`;
+    let reference = {};
+    let links = [];
+
+    patterns.forEach((pattern) => {
+      const { refs, problem, description } = docs[pattern];
+      problem.sort();
+      description.sort();
+      reference = { ...reference, ...refs.javascript, ...refs.misc };
+
+      if (problem[0]) {
+        const pLinks = this.extractLinks(problem[0]);
+        links = [...links, ...pLinks];
+      }
+
+      if (description[0]) {
+        const dLinks = this.extractLinks(description[0]);
+        links = [...links, ...dLinks];
+      }
+    });
+
+    // remove unused references
+    const keys = Object.keys(reference);
+    keys.forEach((key) => {
+      if (!links.includes(key)) {
+        delete reference[key];
+        console.log("delete ", reference);
+      }
+    });
+
+    // used references only
+    const usedKeys = Object.keys(reference);
+    usedKeys.forEach((ref) => {
+      content += `- [${this.toTitleCase(ref, ".")}]\n`;
+    });
+    content += "\n";
+    usedKeys.forEach((ref) => {
+      content += `[${this.toTitleCase(ref, ".")}]: ${reference[ref]}\n`;
+    });
+    return content;
+  }
+
+  static extractLinks(str) {
+    const links = str.match(regex);
+    return links.map((link) => link.substring(1, link.length - 1));
   }
 }

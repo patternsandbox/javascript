@@ -9,7 +9,7 @@ const Logger = require("pino")({
 });
 
 function writeMainReadmeFile() {
-  const content = new ReadmeBuilder().setMainReadme();
+  const content = new ReadmeBuilder().setMainReadme().setMainReadmeReference();
   const writeReadmeFile = new WriteReadmeFile(undefined, content.readme);
   writeReadmeFile.write();
   Logger.info(`Write main README.md for the repository`);
