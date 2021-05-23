@@ -110,7 +110,7 @@ __Listing 2.1: [builder/examples/function/index.js](https://github.com/patternsa
 ```javascript
 import CarBuilder from "./index";
 
-test("Build Honda Camry with camera", () => {
+test("Build Honda Camry with sunroof", () => {
   const car = new CarBuilder()
     .setMake("Honda")
     .setModel("Camry")
