@@ -15,5 +15,6 @@ jobs:
         with:
           node-version: 12
       - run: npm config set registry https://npm.pkg.github.com/patternsandbox
+      - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.WORKFLOW_PACKAGE_TOKEN }}" > ~/.npmrc
       - run: npm ci
       - run: npm test
