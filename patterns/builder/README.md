@@ -33,7 +33,6 @@ class Car {
   constructor(build) {
     this.make = build.make;
     this.model = build.model;
-    this.camera = build.camera || false;
     this.sunroof = build.sunroof || false;
   }
 }
@@ -46,11 +45,6 @@ export default class CarBuilder {
 
   setModel(model) {
     this.model = model;
-    return this;
-  }
-
-  setCamera(camera) {
-    this.camera = camera;
     return this;
   }
 
@@ -73,11 +67,8 @@ test("Build a Honda with with sunroof", () => {
   const car = new CarBuilder()
     .setMake("Honda")
     .setModel("CR-V")
-    .setCamera(false)
     .setSunroof(true)
     .build();
-
-  expect(car.camera).toBeFalsy();
   expect(car.sunroof).toBeTruthy();
 });
 
@@ -89,7 +80,6 @@ __Listing 2: test.js__
 function Car(build) {
   this.body = build.make;
   this.model = build.model;
-  this.camera = build.camera || false;
   this.sunroof = build.sunroof || false;
 }
 
@@ -101,10 +91,6 @@ function CarBuilder() {
     },
     setModel(value) {
       this.model = value;
-      return this;
-    },
-    setCamera(value) {
-      this.camera = value;
       return this;
     },
     setSunroof(value) {
@@ -128,11 +114,8 @@ test("Build Honda Camry with camera", () => {
   const car = new CarBuilder()
     .setMake("Honda")
     .setModel("Camry")
-    .setCamera(true)
     .setSunroof(false)
     .build();
-
-  expect(car.camera).toBeTruthy();
   expect(car.sunroof).toBeFalsy();
 });
 
@@ -185,14 +168,13 @@ import Calculator from "./index";
 test("Calculate total", () => {
   const { result } = new Calculator()
     .add(100)
-    .add(100)
     .divide(2)
     .subtract(10)
     .divide(10)
     .multiply(9)
+    .add(100)
     .compute();
-
-  expect(result).toEqual(81);
+  expect(result).toEqual(136);
 });
 
 ```
@@ -203,7 +185,6 @@ __Listing 2: test.js__
 interface ICar {
   make: string;
   model: string;
-  camera?: boolean;
   sunroof?: boolean;
 }
 
@@ -222,7 +203,6 @@ export default class CarBuilder {
     this.car = {
       make: "",
       model: "",
-      camera: false,
       sunroof: false,
     };
   }
@@ -234,11 +214,6 @@ export default class CarBuilder {
 
   setModel(model) {
     this.car.model = model;
-    return this;
-  }
-
-  setCamera(camera) {
-    this.car.camera = camera;
     return this;
   }
 
@@ -261,12 +236,9 @@ test("Build a Honda with with sunroof", () => {
   const build = new CarBuilder()
     .setMake("Honda")
     .setModel("CR-V")
-    .setCamera(false)
     .setSunroof(true)
     .build();
-
   const { car } = build;
-  expect(car.camera).toBeFalsy();
   expect(car.sunroof).toBeTruthy();
 });
 
