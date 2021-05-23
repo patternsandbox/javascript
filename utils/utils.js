@@ -30,7 +30,7 @@ export default class Utils {
     return str;
   }
 
-  static getExamples(name, ex) {
+  static getExamples(name, ex, mainIndex) {
     const path = `./patterns/${name}/examples/${ex}`;
     const files = readdirSync(path);
     let example = "";
@@ -43,7 +43,7 @@ export default class Utils {
       example += "```javascript";
       example += `\n${data}\n`;
       example += "```";
-      example += `\n__Listing ${
+      example += `\n__Listing ${mainIndex}.${
         index + 1
       }: [${name}/examples/${ex}/${file}](${baseURL}/blob/main/patterns/${name}/examples/${ex}/${file})__\n`;
     });

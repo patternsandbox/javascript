@@ -43,7 +43,7 @@ export default class ReadmeBuilder {
     example.sort();
     example.forEach((ex, index) => {
       this.readme += `\n### ${index + 1}. ${Utils.toTitleCase(ex, ".")}\n`;
-      this.readme += Utils.getExamples(name, ex);
+      this.readme += Utils.getExamples(name, ex, index + 1);
     });
     return this;
   }
