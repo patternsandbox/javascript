@@ -11,6 +11,65 @@ The factory pattern wraps a constructor for different types of objects and retur
 
 ## Example
 
+### 1. Function
+```javascript
+const Truck = function ({ engines, bed, sunroof, cab }) {
+  this.engines = engines;
+  this.bed = bed || "standard";
+  this.sunroof = sunroof || false;
+  this.cab = cab || "standard";
+};
+
+const Sedan = function ({ engines, camera, sunroof, color }) {
+  this.engines = engines;
+  this.camera = camera || false;
+  this.sunroof = sunroof || false;
+  this.color = color;
+};
+const cars = { Truck, Sedan };
+
+const carFactory = function createCar(type, attributes) {
+  const CarType = cars[type];
+
+  return new CarType(attributes);
+};
+
+export default carFactory;
+
+```
+*Listing 1: index.js*
+```javascript
+import carFactory from "./index";
+
+test("make truck", () => {
+  const attributes = {
+    engines: "V8",
+    bed: "standard",
+    sunroof: true,
+    cab: "standard",
+  };
+
+  const truck = carFactory("Truck", { ...attributes });
+
+  expect(truck.engines).toEqual(attributes.engines);
+});
+
+test("make sedan", () => {
+  const attributes = {
+    engines: "V8",
+    camera: true,
+    sunroof: true,
+    color: "white",
+  };
+
+  const truck = carFactory("Sedan", { ...attributes });
+
+  expect(truck.engines).toEqual(attributes.engines);
+});
+
+```
+*Listing 2: test.js*
+
 ## References
 - [Babs Craig]
 
