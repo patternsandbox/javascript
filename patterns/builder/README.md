@@ -59,7 +59,7 @@ export default class CarBuilder {
 }
 
 ```
-__Listing 1: [builder/examples/class/index.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/class/index.js)__
+__Listing 1.1: [builder/examples/class/index.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/class/index.js)__
 ```javascript
 import CarBuilder from "./index";
 
@@ -73,7 +73,7 @@ test("Build a Honda with with sunroof", () => {
 });
 
 ```
-__Listing 2: [builder/examples/class/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/class/test.js)__
+__Listing 1.2: [builder/examples/class/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/class/test.js)__
 
 ### 2. Function
 ```javascript
@@ -106,7 +106,7 @@ function CarBuilder() {
 export default CarBuilder;
 
 ```
-__Listing 1: [builder/examples/function/index.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/function/index.js)__
+__Listing 2.1: [builder/examples/function/index.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/function/index.js)__
 ```javascript
 import CarBuilder from "./index";
 
@@ -120,7 +120,7 @@ test("Build Honda Camry with camera", () => {
 });
 
 ```
-__Listing 2: [builder/examples/function/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/function/test.js)__
+__Listing 2.2: [builder/examples/function/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/function/test.js)__
 
 ### 3. Sequential
 ```javascript
@@ -161,7 +161,7 @@ export default class CalculatorBuilder {
 }
 
 ```
-__Listing 1: [builder/examples/sequential/index.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/sequential/index.js)__
+__Listing 3.1: [builder/examples/sequential/index.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/sequential/index.js)__
 ```javascript
 import Calculator from "./index";
 
@@ -178,7 +178,7 @@ test("Calculate total", () => {
 });
 
 ```
-__Listing 2: [builder/examples/sequential/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/sequential/test.js)__
+__Listing 3.2: [builder/examples/sequential/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/sequential/test.js)__
 
 ### 4. Typescript
 ```javascript
@@ -228,7 +228,7 @@ export default class CarBuilder {
 }
 
 ```
-__Listing 1: [builder/examples/typescript/index.ts](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/typescript/index.ts)__
+__Listing 4.1: [builder/examples/typescript/index.ts](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/typescript/index.ts)__
 ```javascript
 import CarBuilder from "./index.ts";
 
@@ -243,7 +243,7 @@ test("Build a Honda with with sunroof", () => {
 });
 
 ```
-__Listing 2: [builder/examples/typescript/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/typescript/test.js)__
+__Listing 4.2: [builder/examples/typescript/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/typescript/test.js)__
 
 ## References
 - [Jsmanifest]

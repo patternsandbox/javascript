@@ -49,14 +49,14 @@ console.log("\nWith decorator");
 console.log(decoratedUser.getFullName());
 
 ```
-__Listing 1: [decorator/examples/class/index.js](https://github.com/patternsandbox/javascript/blob/main/patterns/decorator/examples/class/index.js)__
+__Listing 1.1: [decorator/examples/class/index.js](https://github.com/patternsandbox/javascript/blob/main/patterns/decorator/examples/class/index.js)__
 ```javascript
 test("TODO", () => {
   expect(true).toBeTruthy();
 });
 
 ```
-__Listing 2: [decorator/examples/class/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/decorator/examples/class/test.js)__
+__Listing 1.2: [decorator/examples/class/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/decorator/examples/class/test.js)__
 
 ## References
 
