@@ -21,6 +21,10 @@ Builder pattern separates the `construction` of complex object which involve `co
 
 Builders allow us to construct complex objects by only specifying the type and content of the object, shielding us from the process of creating or representing the object explicitly. __Ref:__ [Addy Osmani]
 
+Director defines the order in which the construction steps are performed. Its purpose is the re-usability of specific configurations. The Director can be omitted in some implementations of this pattern. __Ref:__ [Carlos Caballero]
+
+Directors are involved in defining methods ensuring that steps are executed in a specific order to build the commonly constructed objects. __Ref:__ [Jsmanifest]
+
 The builder design pattern is self-explanatory. It creates objects but it really shines when there is a need to create multiple objects with some similarities. A builder avoids the necessity to create myriad subclasses from a base class or big constructors with a lot of conditional logic using method chaining. __Ref:__ [Eslam Hefnawy]
 
 The parameters in the constructor are reduced and served in a much more readable way, and thus there is no need to pass in null for optional parameters to the constructor. __Ref:__ [Itay Elgazar]
@@ -75,7 +79,89 @@ test("Build a Honda with with sunroof", () => {
 ```
 __Listing 1.2: [builder/examples/class/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/class/test.js)__
 
-### 2. Function
+### 2. Director
+```javascript
+class Audi {
+  constructor(build) {
+    this.horsePower = build.horsePower;
+    this.torque = build.torque;
+    this.sunroof = build.sunroof || false;
+    this.panoramicSunroof = build.panoramicSunroof || false;
+  }
+}
+
+export class AudiBuilder {
+  setMaxHorsePower() {
+    this.horsePower = 563;
+    return this;
+  }
+
+  setMaxTorque() {
+    this.torque = 590;
+  }
+
+  setPanoramicSunroof() {
+    this.panoramicSunroof = true;
+    return this;
+  }
+
+  setMinHorsePower() {
+    this.horsePower = 228;
+    return this;
+  }
+
+  setMinTorque() {
+    this.torque = 258;
+  }
+
+  setSunroof() {
+    this.sunroof = true;
+    return this;
+  }
+
+  build() {
+    return new Audi(this);
+  }
+}
+
+export class Director {
+  constructor() {
+    this.builder = new AudiBuilder();
+  }
+
+  buildEntryLevelAudi() {
+    this.builder.setMinHorsePower();
+    this.builder.setMinTorque();
+    this.builder.setSunroof();
+    return this;
+  }
+
+  buildLoadedAudi() {
+    this.builder.setMaxHorsePower();
+    this.builder.setMaxTorque();
+    this.builder.setPanoramicSunroof();
+    return this;
+  }
+
+  build() {
+    return this.builder;
+  }
+}
+
+```
+__Listing 2.1: [builder/examples/director/index.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/director/index.js)__
+```javascript
+import { Director } from "./index";
+
+test("build entry level Audi", () => {
+  const audi = new Director().buildEntryLevelAudi().build();
+  expect(audi.torque).toEqual(258);
+});
+
+```
+__Listing 2.2: [builder/examples/director/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/director/test.js)__
+
+### 3. Function
 ```javascript
 function Car(build) {
   this.body = build.make;
@@ -106,7 +192,7 @@ function CarBuilder() {
 export default CarBuilder;
 
 ```
-__Listing 2.1: [builder/examples/function/index.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/function/index.js)__
+__Listing 3.1: [builder/examples/function/index.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/function/index.js)__
 ```javascript
 import CarBuilder from "./index";
 
@@ -120,9 +206,9 @@ test("Build Honda Camry with sunroof", () => {
 });
 
 ```
-__Listing 2.2: [builder/examples/function/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/function/test.js)__
+__Listing 3.2: [builder/examples/function/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/function/test.js)__
 
-### 3. Sequential
+### 4. Sequential
 ```javascript
 class Calculator {
   constructor(builder) {
@@ -161,7 +247,7 @@ export default class CalculatorBuilder {
 }
 
 ```
-__Listing 3.1: [builder/examples/sequential/index.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/sequential/index.js)__
+__Listing 4.1: [builder/examples/sequential/index.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/sequential/index.js)__
 ```javascript
 import Calculator from "./index";
 
@@ -178,9 +264,9 @@ test("Calculate total", () => {
 });
 
 ```
-__Listing 3.2: [builder/examples/sequential/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/sequential/test.js)__
+__Listing 4.2: [builder/examples/sequential/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/sequential/test.js)__
 
-### 4. Typescript
+### 5. Typescript
 ```javascript
 interface ICar {
   make: string;
@@ -228,7 +314,7 @@ export default class CarBuilder {
 }
 
 ```
-__Listing 4.1: [builder/examples/typescript/index.ts](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/typescript/index.ts)__
+__Listing 5.1: [builder/examples/typescript/index.ts](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/typescript/index.ts)__
 ```javascript
 import CarBuilder from "./index.ts";
 
@@ -243,7 +329,7 @@ test("Build a Honda with with sunroof", () => {
 });
 
 ```
-__Listing 4.2: [builder/examples/typescript/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/typescript/test.js)__
+__Listing 5.2: [builder/examples/typescript/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/typescript/test.js)__
 
 ## References
 - [Jsmanifest]
