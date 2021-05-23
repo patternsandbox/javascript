@@ -48,12 +48,22 @@ export default class Utils {
 
   static getPatternsSummary(type) {
     const patterns = readdirSync("./patterns");
+    let content = "";
     patterns.forEach((pattern) => {
-      const { category, name } = docs[pattern];
-      if(type === category) {
-        console.log(category, " ", type, " ", name);
+      const { category, name, summary, problem, description } = docs[pattern];
+      problem.sort();
+      description.sort();
+      if (type === category) {
+        content += `\n### ${this.toTitleCase(name)} Pattern`;
+        const formatted = this.formatLink(summary);
+        content += `\n>${formatted}\n`;
+        content += `\n#### Problem\n`;
+        content += problem[0];
+        content += `\n#### Solution\n`;
+        content += description[0];
+        content += `\n\nFor more: [${name} pattern >>>](https://github.com/patternsandbox/javascript/tree/main/patterns/${name})`;
       }
     });
-    return undefined;
+    return content;
   }
 }
