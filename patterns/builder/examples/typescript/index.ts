@@ -1,7 +1,6 @@
 interface ICar {
   make: string;
   model: string;
-  camera?: boolean;
   sunroof?: boolean;
 }
 
@@ -20,7 +19,6 @@ export default class CarBuilder {
     this.car = {
       make: "",
       model: "",
-      camera: false,
       sunroof: false,
     };
   }
@@ -32,11 +30,6 @@ export default class CarBuilder {
 
   setModel(model) {
     this.car.model = model;
-    return this;
-  }
-
-  setCamera(camera) {
-    this.car.camera = camera;
     return this;
   }
 

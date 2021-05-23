@@ -95,7 +95,6 @@ export default class Utils {
     keys.forEach((key) => {
       if (!links.includes(key)) {
         delete reference[key];
-        console.log("delete ", reference);
       }
     });
 

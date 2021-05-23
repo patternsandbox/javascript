@@ -2,7 +2,6 @@ class Car {
   constructor(build) {
     this.make = build.make;
     this.model = build.model;
-    this.camera = build.camera || false;
     this.sunroof = build.sunroof || false;
   }
 }
@@ -15,11 +14,6 @@ export default class CarBuilder {
 
   setModel(model) {
     this.model = model;
-    return this;
-  }
-
-  setCamera(camera) {
-    this.camera = camera;
     return this;
   }
 
