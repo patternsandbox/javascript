@@ -37,7 +37,7 @@ const carFactory = function createCar(type, attributes) {
 export default carFactory;
 
 ```
-*Listing 1: index.js*
+__Listing 1: index.js__
 ```javascript
 import carFactory from "./index";
 
@@ -68,7 +68,7 @@ test("make sedan", () => {
 });
 
 ```
-*Listing 2: test.js*
+__Listing 2: test.js__
 
 ## References
 - [Babs Craig]

@@ -62,6 +62,16 @@ export default class ReadmeBuilder {
     return this;
   }
 
+  setMainReadme() {
+    const types = ["creational", "structural", "behavioral"];
+    this.readme = `# Design Patterns in JavaScript\n`;
+    types.forEach((type) => {
+      this.readme += `\n## ${Utils.toTitleCase(type)} Patterns\n`;
+      this.readme += Utils.getPatternsSummary(type);
+    });
+    return this;
+  }
+
   build() {
     return new Readme(this);
   }

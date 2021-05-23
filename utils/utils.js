@@ -1,4 +1,5 @@
 import { readdirSync, readFileSync } from "fs";
+import * as docs from "@patternsandbox/docs";
 
 export default class Utils {
   static toTitleCase(str, delimiter = ".") {
@@ -39,9 +40,20 @@ export default class Utils {
       example += "```javascript";
       example += `\n${data}\n`;
       example += "```";
-      example += `\n*Listing ${index + 1}: ${file}*\n`;
+      example += `\n__Listing ${index + 1}: ${file}__\n`;
     });
 
     return example;
+  }
+
+  static getPatternsSummary(type) {
+    const patterns = readdirSync("./patterns");
+    patterns.forEach((pattern) => {
+      const { category, name } = docs[pattern];
+      if(type === category) {
+        console.log(category, " ", type, " ", name);
+      }
+    });
+    return undefined;
   }
 }

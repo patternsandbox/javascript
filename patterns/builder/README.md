@@ -65,7 +65,7 @@ export default class CarBuilder {
 }
 
 ```
-*Listing 1: index.js*
+__Listing 1: index.js__
 ```javascript
 import CarBuilder from "./index";
 
@@ -82,7 +82,7 @@ test("Build a Honda with with sunroof", () => {
 });
 
 ```
-*Listing 2: test.js*
+__Listing 2: test.js__
 
 ### 2. Function
 ```javascript
@@ -120,7 +120,7 @@ function CarBuilder() {
 export default CarBuilder;
 
 ```
-*Listing 1: index.js*
+__Listing 1: index.js__
 ```javascript
 import CarBuilder from "./index";
 
@@ -137,7 +137,7 @@ test("Build Honda Camry with camera", () => {
 });
 
 ```
-*Listing 2: test.js*
+__Listing 2: test.js__
 
 ### 3. Sequential
 ```javascript
@@ -178,7 +178,7 @@ export default class CalculatorBuilder {
 }
 
 ```
-*Listing 1: index.js*
+__Listing 1: index.js__
 ```javascript
 import Calculator from "./index";
 
@@ -196,7 +196,7 @@ test("Calculate total", () => {
 });
 
 ```
-*Listing 2: test.js*
+__Listing 2: test.js__
 
 ### 4. Typescript
 ```javascript
@@ -253,7 +253,7 @@ export default class CarBuilder {
 }
 
 ```
-*Listing 1: index.ts*
+__Listing 1: index.ts__
 ```javascript
 import CarBuilder from "./index.ts";
 
@@ -271,7 +271,7 @@ test("Build a Honda with with sunroof", () => {
 });
 
 ```
-*Listing 2: test.js*
+__Listing 2: test.js__
 
 ## References
 - [Jsmanifest]

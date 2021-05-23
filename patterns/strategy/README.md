@@ -51,14 +51,14 @@ function greet(type) {
 * */
 
 ```
-*Listing 1: index.js*
+__Listing 1: index.js__
 ```javascript
 test("TODO", () => {
   expect(true).toBeTruthy();
 });
 
 ```
-*Listing 2: test.js*
+__Listing 2: test.js__
 
 ## References
 
