@@ -1,6 +1,6 @@
 import CarBuilder from "./index";
 
-test("Build Honda Camry with camera", () => {
+test("Build Honda Camry with sunroof", () => {
   const car = new CarBuilder()
     .setMake("Honda")
     .setModel("Camry")
