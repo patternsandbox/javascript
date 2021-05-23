@@ -17,9 +17,8 @@ function writeMainReadmeFile() {
 
 function writePatternReadme() {
   patterns.forEach((pattern) => {
-    const { name, summary, refs, description, problem, example } = docs[
-      pattern
-    ];
+    const { name, summary, refs, description, problem, example } =
+      docs[pattern];
     const content = new ReadmeBuilder()
       .setTitle(name)
       .setSummary(summary)

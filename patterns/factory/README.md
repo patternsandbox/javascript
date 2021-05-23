@@ -37,7 +37,7 @@ const carFactory = function createCar(type, attributes) {
 export default carFactory;
 
 ```
-__Listing 1: index.js__
+__Listing 1: [factory/examples/function/index.js](https://github.com/patternsandbox/javascript/blob/main/patterns/factory/examples/function/index.js)__
 ```javascript
 import carFactory from "./index";
 
@@ -68,7 +68,7 @@ test("make sedan", () => {
 });
 
 ```
-__Listing 2: test.js__
+__Listing 2: [factory/examples/function/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/factory/examples/function/test.js)__
 
 ## References
 - [Babs Craig]

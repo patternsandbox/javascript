@@ -61,14 +61,14 @@ let computer = new ComputerFacade();
 computer.start();
 
 ```
-__Listing 1: index.js__
+__Listing 1: [facade/examples/class/index.js](https://github.com/patternsandbox/javascript/blob/main/patterns/facade/examples/class/index.js)__
 ```javascript
 test("TODO", () => {
   expect(true).toBeTruthy();
 });
 
 ```
-__Listing 2: test.js__
+__Listing 2: [facade/examples/class/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/facade/examples/class/test.js)__
 
 ## References
 

@@ -51,14 +51,14 @@ function greet(type) {
 * */
 
 ```
-__Listing 1: index.js__
+__Listing 1: [strategy/examples/function/index.js](https://github.com/patternsandbox/javascript/blob/main/patterns/strategy/examples/function/index.js)__
 ```javascript
 test("TODO", () => {
   expect(true).toBeTruthy();
 });
 
 ```
-__Listing 2: test.js__
+__Listing 2: [strategy/examples/function/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/strategy/examples/function/test.js)__
 
 ## References
 

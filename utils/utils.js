@@ -3,6 +3,7 @@ import * as docs from "@patternsandbox/docs";
 
 const patterns = readdirSync("./patterns");
 const regex = /\[(.*?)\]/g; // find words surround by []
+const baseURL = "https://github.com/patternsandbox/javascript";
 
 export default class Utils {
   static toTitleCase(str, delimiter = ".") {
@@ -42,7 +43,9 @@ export default class Utils {
       example += "```javascript";
       example += `\n${data}\n`;
       example += "```";
-      example += `\n__Listing ${index + 1}: ${file}__\n`;
+      example += `\n__Listing ${
+        index + 1
+      }: [${name}/examples/${ex}/${file}](${baseURL}/blob/main/patterns/${name}/examples/${ex}/${file})__\n`;
     });
 
     return example;
@@ -62,7 +65,7 @@ export default class Utils {
         content += this.formatLink(problem[0]);
         content += `\n#### Solution\n`;
         content += this.formatLink(description[0]);
-        content += `\n\nFor more: [${name} pattern >>>](https://github.com/patternsandbox/javascript/tree/main/patterns/${name})`;
+        content += `\n\nFor more: [${name} pattern >>>](${baseURL}/tree/main/patterns/${name})`;
       }
     });
     return content;
