@@ -5,6 +5,7 @@
   },
   "parser": "babel-eslint",
   "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "ignorePatterns": ["*.json", "**/**/*.json"],
   "rules": {
     "import/no-dynamic-require": 0,
     "global-require": 0,

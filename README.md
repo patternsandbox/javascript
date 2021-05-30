@@ -2,7 +2,7 @@
 
 ## Creational Patterns
 
- These patterns are designed for class instantiation. They can be either class-creation patterns or object-creational patterns. 
+ Creational patterns are designed for class instantiation and object creation to increase flexibility and reuse of existing code. 
 
 ### Builder Pattern
 >Builder pattern separate the complexities of the creation logic from the final representation.
@@ -24,7 +24,7 @@ The factory pattern wraps a constructor for different types of objects and retur
 For more: [factory pattern >>>](https://github.com/patternsandbox/javascript/tree/main/patterns/factory)
 ## Structural Patterns
 
- Designed with regard to a class’s structure and composition. The main goal of most of these patterns is to increase the functionality of the class(es) involved, without changing much of its composition. 
+ Stractural patterns are designed with regard to a class’s structure and composition. 
 
 ### Decorator Pattern
 >
@@ -47,10 +47,6 @@ For more: [facade pattern >>>](https://github.com/patternsandbox/javascript/tree
 ## Behavioural Patterns
 
  Behavioural patterns are designed depending on how one class communicates with others. 
-
-## Refs Patterns
-
- [object Object] 
 
 ## References
 - [Yash Sharma]
