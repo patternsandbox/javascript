@@ -2,6 +2,8 @@
 
 ## Creational Patterns
 
+ These patterns are designed for class instantiation. They can be either class-creation patterns or object-creational patterns. 
+
 ### Builder Pattern
 >Builder pattern separate the complexities of the creation logic from the final representation.
 
@@ -22,6 +24,8 @@ undefined
 For more: [factory pattern >>>](https://github.com/patternsandbox/javascript/tree/main/patterns/factory)
 ## Structural Patterns
 
+ Designed with regard to a class’s structure and composition. The main goal of most of these patterns is to increase the functionality of the class(es) involved, without changing much of its composition. 
+
 ### Decorator Pattern
 >
 
@@ -32,28 +36,25 @@ undefined
 
 For more: [decorator pattern >>>](https://github.com/patternsandbox/javascript/tree/main/patterns/decorator)
 ### Facade Pattern
->
+>The Façade pattern provides an interface which shields clients from complex functionality in one or more subsystems.
 
 #### Problem
-undefined
+Imagine that you must make your code work with a broad set of objects that belong to a sophisticated library or framework. Ordinarily, you’d need to initialize all of those objects, keep track of dependencies, execute methods in the correct order, and so on. As a result, the business logic of your classes would become tightly coupled to the implementation details of 3rd-party classes, making it hard to comprehend and maintain. __Ref:__ [Refactoring Guru]
 #### Solution
-undefined
+
 
 For more: [facade pattern >>>](https://github.com/patternsandbox/javascript/tree/main/patterns/facade)
-## Behavioral Patterns
+## Behavioural Patterns
 
-### Strategy Pattern
->
+ Behavioural patterns are designed depending on how one class communicates with others. 
 
-#### Problem
-undefined
-#### Solution
-undefined
+## Refs Patterns
 
-For more: [strategy pattern >>>](https://github.com/patternsandbox/javascript/tree/main/patterns/strategy)
+ [object Object] 
+
 ## References
 - [Yash Sharma]
 - [Refactoring Guru]
 
 [Yash Sharma]: https://codeburst.io/builder-pattern-in-javascript-e5b13e4e51af
-[Refactoring Guru]: https://refactoring.guru/design-patterns/builder
+[Refactoring Guru]: https://refactoring.guru/design-patterns/facade

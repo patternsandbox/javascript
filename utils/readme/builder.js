@@ -1,3 +1,4 @@
+import * as docs from "@patternsandbox/docs";
 import Utils from "../utils";
 
 class Readme {
@@ -63,10 +64,11 @@ export default class ReadmeBuilder {
   }
 
   setMainReadme() {
-    const types = ["creational", "structural", "behavioral"];
+    const types = Object.keys(docs.types);
     this.readme = `# Design Patterns in JavaScript\n`;
     types.forEach((type) => {
       this.readme += `\n## ${Utils.toTitleCase(type)} Patterns\n`;
+      this.readme += `\n ${docs.types[type]} \n`;
       this.readme += Utils.getPatternsSummary(type);
     });
     return this;

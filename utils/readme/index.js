@@ -8,6 +8,7 @@ const Logger = require("pino")({
   prettyPrint: { colorize: true },
 });
 
+// write README.md for the repo
 function writeMainReadmeFile() {
   const content = new ReadmeBuilder().setMainReadme().setMainReadmeReference();
   const writeReadmeFile = new WriteReadmeFile(undefined, content.readme);
@@ -15,6 +16,7 @@ function writeMainReadmeFile() {
   Logger.info(`Write main README.md for the repository`);
 }
 
+// write README.md for each pattern
 function writePatternReadme() {
   patterns.forEach((pattern) => {
     const { name, summary, refs, description, problem, example } =
