@@ -7,8 +7,6 @@ Imagine that you must make your code work with a broad set of objects that belon
 
 ## Solution
 
-
-
 A facade is a class that provides a simple interface to a complex subsystem which contains lots of moving parts. A facade might provide limited functionality in comparison to working with the subsystem directly. However, it includes only those features that clients really care about. __Ref:__ [Refactoring Guru]
 
 A facade pattern provides a convenient **higher-level interface** to a larger body of code, hiding its true underlying complexity. __Ref:__ [Addy Osmani]
@@ -176,11 +174,13 @@ import AutoLoan from "../class";
 
 test("approved", () => {
   const result = new AutoLoan("Bill").applyFor("50000");
+
   expect(`Bill has been approved for a $50000 auto loan.`).toEqual(result);
 });
 
 test("denied", () => {
   const result = new AutoLoan("Bob").applyFor("50000");
+
   expect(`Bob has been denied for a $50000 auto loan.`).toEqual(result);
 });
 

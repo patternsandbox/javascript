@@ -56,7 +56,7 @@
     ]
   },
   "dependencies": {
-    "@patternsandbox/docs": "^1.0.7",
+    "@patternsandbox/docs": "^1.0.8",
     "pino": "6.11.3",
     "pino-pretty": "4.8.0"
   }
