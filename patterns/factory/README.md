@@ -3,19 +3,19 @@
 
 ## Problem
 
-In class-based programming, the factory method pattern is a creational pattern that uses factory methods **to deal with the problem of creating objects** without having to specify the exact class of the object that will be created. This is done by creating objects by calling a factory method—either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes—rather than by calling a constructor. ... __Ref:__ [Jar Gon]
+In class-based programming, the factory method pattern is a creational pattern that uses factory methods **to deal with the problem of creating objects** without having to specify the exact class of the object that will be created. This is done by creating objects by calling a factory method—either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes—rather than by calling a constructor. ... [Jar Gon]
 
-There are many people who argue against using constructors at all. Their arguments boil down to the fact that if you aren’t careful, it can be easy to introduce bugs into your code when using constructors. ... __Ref:__ [The Odin Project]
+There are many people who argue against using constructors at all. Their arguments boil down to the fact that if you aren’t careful, it can be easy to introduce bugs into your code when using constructors. ... [The Odin Project]
 
 ## Solution
 
-The Factory pattern can be especially useful when applied to the following situations: When our object or component setup involves a high level of complexity. When we need to easily generate different instances of objects depending on the environment we are in. When we’re working with many small objects or components that share the same properties. When composing objects with instances of other objects that need only satisfy an API contract (a.k.a., duck typing) to work. This is useful for decoupling. ... __Ref:__ [Addy Osmani]
+The Factory pattern can be especially useful when applied to the following situations: When our object or component setup involves a high level of complexity. When we need to easily generate different instances of objects depending on the environment we are in. When we’re working with many small objects or components that share the same properties. When composing objects with instances of other objects that need only satisfy an API contract (a.k.a., duck typing) to work. This is useful for decoupling. ... [Addy Osmani]
 
-The factory function pattern is **similar to constructors**, but instead of using new to create an object, factory functions simply set up and return the new object when you call the function. ... __Ref:__ [The Odin Project]
+The factory function pattern is **similar to constructors**, but instead of using new to create an object, factory functions simply set up and return the new object when you call the function. ... [The Odin Project]
 
-The factory pattern wraps a constructor for different types of objects and returns instances of the objects via a simple API. It makes it easy to create different objects by exposing a simple API that return the specified object type. ... __Ref:__ [Babs Craig]
+The factory pattern wraps a constructor for different types of objects and returns instances of the objects via a simple API. It makes it easy to create different objects by exposing a simple API that return the specified object type. ... [Babs Craig]
 
-With a factory function, you can create as many user objects as you want. If you’re building a chat app, for instance, you can have a user object representing the current user, and also a lot of other user objects representing all the other users who are currently signed in and chatting. ... __Ref:__ [Eric Elliott]
+With a factory function, you can create as many user objects as you want. If you’re building a chat app, for instance, you can have a user object representing the current user, and also a lot of other user objects representing all the other users who are currently signed in and chatting. ... [Eric Elliott]
 
 ## Example
 
