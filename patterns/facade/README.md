@@ -3,25 +3,25 @@
 
 ## Problem
 
-Imagine that you must make your code work with a broad set of objects that belong to a sophisticated library or framework. Ordinarily, you’d need to initialize all of those objects, keep track of dependencies, execute methods in the correct order, and so on. As a result, the business logic of your classes would become tightly coupled to the implementation details of 3rd-party classes, making it hard to comprehend and maintain. __Ref:__ [Refactoring Guru]
+Imagine that you must make your code work with a broad set of objects that belong to a sophisticated library or framework. Ordinarily, you’d need to initialize all of those objects, keep track of dependencies, execute methods in the correct order, and so on. As a result, the business logic of your classes would become tightly coupled to the implementation details of 3rd-party classes, making it hard to comprehend and maintain. ... __Ref:__ [Refactoring Guru]
 
 ## Solution
 
-A facade is a class that provides a simple interface to a complex subsystem which contains lots of moving parts. A facade might provide limited functionality in comparison to working with the subsystem directly. However, it includes only those features that clients really care about. __Ref:__ [Refactoring Guru]
+A facade is a class that provides a simple interface to a complex subsystem which contains lots of moving parts. A facade might provide limited functionality in comparison to working with the subsystem directly. However, it includes only those features that clients really care about. ... __Ref:__ [Refactoring Guru]
 
-A facade pattern provides a convenient **higher-level interface** to a larger body of code, hiding its true underlying complexity. __Ref:__ [Addy Osmani]
+A facade pattern provides a convenient **higher-level interface** to a larger body of code, hiding its true underlying complexity. ... __Ref:__ [Addy Osmani]
 
-An area where Façades are used is in **refactoring**. Suppose you have a confusing or messy set of **legacy objects** that the client should not be concerned about. You can hide this code behind a Façade. __Ref:__ [Do Factory]
+An area where Façades are used is in **refactoring**. Suppose you have a confusing or messy set of **legacy objects** that the client should not be concerned about. You can hide this code behind a Façade. ... __Ref:__ [Do Factory]
 
-The Facade pattern both simplifies the interface of a class and it also decouples the class from the code that utilizes it. This gives us the ability to indirectly interact with subsystems in a way that can sometimes be **less prone to error** than accessing the subsystem directly. __Ref:__ [Addy Osmani]
+The Facade pattern both simplifies the interface of a class and it also decouples the class from the code that utilizes it. This gives us the ability to indirectly interact with subsystems in a way that can sometimes be **less prone to error** than accessing the subsystem directly. ... __Ref:__ [Addy Osmani]
 
-The facade pattern is used to simplify a client’s interaction with a system. So it can be used when an application has a large and complex underlying code that the client does not need to see. __Ref:__ [Educative Io]
+The facade pattern is used to simplify a client’s interaction with a system. So it can be used when an application has a large and complex underlying code that the client does not need to see. ... __Ref:__ [Educative Io]
 
 This depends on the environment you will be building the JavaScript in, each comes with it’s own set of tools to help you get the job done.
 If you are building a node application or module you will make use of node’s require() method and module.exports syntax to construct a facade.
-If you are building a web application or module using requirejs you will use define() and require() to build your facade, or if you are using es6 syntax you will be using the import and export statements. __Ref:__ [Hendrik Volschenk]
+If you are building a web application or module using requirejs you will use define() and require() to build your facade, or if you are using es6 syntax you will be using the import and export statements. ... __Ref:__ [Hendrik Volschenk]
 
-When building an application, we often face problems with external APIs. One has simple methods, other has them very complicated. Unifying them under one common interface is one of uses of the facade pattern. __Ref:__ [Tomek Buszewski]
+When building an application, we often face problems with external APIs. One has simple methods, other has them very complicated. Unifying them under one common interface is one of uses of the facade pattern. ... __Ref:__ [Tomek Buszewski]
 
 ## Example
 

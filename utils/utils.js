@@ -23,7 +23,7 @@ export default class Utils {
           link.substring(1, link.length - 1),
           "."
         );
-        formatted = formatted.replace(link, `__Ref:__ [${trimmed}]`);
+        formatted = formatted.replace(link, `... __Ref:__ [${trimmed}]`);
       });
       return formatted;
     }
