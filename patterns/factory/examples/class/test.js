@@ -1,14 +1,14 @@
-import carFactory from "./index";
+import CarFactory from "./index";
 
 test("make truck", () => {
   const attributes = {
-    engines: "V8",
+    engine: "V8",
     bed: "standard",
     sunroof: true,
     cab: "standard",
   };
 
-  const truck = carFactory("Truck", { ...attributes });
+  const truck = new CarFactory("truck", { ...attributes }).build();
 
   expect(truck.bed).toEqual("standard");
 });
@@ -21,7 +21,7 @@ test("make sedan", () => {
     color: "white",
   };
 
-  const truck = carFactory("Sedan", { ...attributes });
+  const truck = new CarFactory("sedan", { ...attributes }).build();
 
   expect(truck.sunroof).toBeTruthy();
 });
