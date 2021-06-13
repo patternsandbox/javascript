@@ -27,12 +27,12 @@ For more: [factory pattern >>>](https://github.com/patternsandbox/javascript/tre
  Stractural patterns are designed with regard to a class’s structure and composition. 
 
 ### Decorator Pattern
->
+>In its simplest form, a decorator is simply a way of wrapping one piece of code with another — literally “decorating” it. ... [Graham Cox]
 
 #### Problem
-undefined
+A common reason why developers use them is that their applications may contain features requiring a large quantity of distinct types of object. Imagine having to define hundreds of different object constructors for, say, a JavaScript game. ... [Addy Osmani]
 #### Solution
-undefined
+Decorators are a proposal for extending JavaScript classes which is widely adopted among developers in transpiler environments, with broad interest in standardization. TC39 has been iterating on decorators proposals for over five years. ... [Tc39 Proposal Decorators]
 
 For more: [decorator pattern >>>](https://github.com/patternsandbox/javascript/tree/main/patterns/decorator)
 ### Facade Pattern
@@ -52,9 +52,11 @@ For more: [facade pattern >>>](https://github.com/patternsandbox/javascript/tree
 - [Yash Sharma]
 - [Addy Osmani]
 - [Refactoring Guru]
+- [Tc39 Proposal Decorators]
 - [Jar Gon]
 
 [Yash Sharma]: https://codeburst.io/builder-pattern-in-javascript-e5b13e4e51af
 [Addy Osmani]: https://addyosmani.com/resources/essentialjsdesignpatterns/book/
 [Refactoring Guru]: https://refactoring.guru/design-patterns/facade
+[Tc39 Proposal Decorators]: https://github.com/tc39/proposal-decorators
 [Jar Gon]: http://jargon.js.org/_glossary/FACTORY_PATTERN.md

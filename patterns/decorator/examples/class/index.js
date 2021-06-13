@@ -1,38 +1,31 @@
-class User {
-  constructor(title, first, last) {
-    this.first = first;
-    this.last = last;
-    this.title = title;
+export class Car {
+  constructor(spec) {
+    this.body = spec.body;
+    this.model = spec.model;
+    this.sunroof = spec.sunroof || false;
   }
 
-  getFullName() {
-    return `${this.first} ${this.last}`;
-  }
-}
-
-class UserDecorator {
-  constructor(user) {
-    this.user = user;
-  }
-
-  getFullName() {
-    return this.user.getFullName();
+  assemble() {
+    return {
+      body: this.body,
+      model: this.model,
+      sunroof: this.sunroof,
+    };
   }
 }
 
-class UserFullNameWithTitleDecorator extends UserDecorator {
-  getFullName() {
-    return `${this.user.title} ${this.user.getFullName()}`;
+export class DecorateCar {
+  constructor(myCar, color, tint) {
+    this.car = myCar;
+    this.color = color;
+    this.tint = tint || false;
+  }
+
+  makeover() {
+    return {
+      ...this.car,
+      color: this.color,
+      tint: this.tint,
+    };
   }
 }
-
-// without decorator
-const user = new User("Mr.", "John", "Doe");
-console.log("\nWithout decorator");
-console.log(user.getFullName());
-console.log(user.title + user.getFullName());
-
-// with decorator
-const decoratedUser = new UserFullNameWithTitleDecorator(user);
-console.log("\nWith decorator");
-console.log(decoratedUser.getFullName());
