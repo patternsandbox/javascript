@@ -66,7 +66,7 @@ export default class Utils {
         content += `\n#### Solution\n`;
         content += this.formatLink(description[0]);
         content += page
-          ? `\n\nRead more here: [${name} pattern >>>](https://patternsandbox.github.io/javascript/#${name}-pattern-1)`
+          ? `\n\nRead more here: [${name} pattern >>](https://patternsandbox.github.io/javascript/#${name}-pattern-1)`
           : `\n\nRead more here: [${name} pattern >>>](${baseURL}/tree/main/patterns/${name})`;
       }
     });
