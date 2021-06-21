@@ -1,7 +1,13 @@
 import { readdirSync } from "fs";
 import * as docs from "@patternsandbox/docs";
 import ReadmeBuilder from "./builder";
-import WriteReadmeFile from "./writer";
+import {
+  WriteDocs,
+  WriteIndexReadme,
+  WritePagesPatternReadme,
+  WriteMainReadme,
+  WritePatternReadme,
+} from "./writer";
 
 const patterns = readdirSync("./patterns");
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -11,14 +17,31 @@ const Logger = require("pino")({
 
 // write README.md for the repo
 function writeMainReadmeFile() {
-  const content = new ReadmeBuilder().setMainReadme().setMainReadmeReference();
-  const writeReadmeFile = new WriteReadmeFile(undefined, content.readme);
-  writeReadmeFile.write();
+  const content = new ReadmeBuilder()
+    .setMainReadme({ page: true })
+    .setMainReadmeReference();
+
+  const writeMainReadme = new WriteDocs(new WriteMainReadme(), content.readme);
+  writeMainReadme.write();
+
   Logger.info(`Write main README.md for the repository`);
 }
 
+// write index.md for Github Pages
+function writeIndexReadmeFile() {
+  const content = new ReadmeBuilder()
+    .setMainReadme({ page: true })
+    .setMainReadmeReference();
+  const writeIndexReadme = new WriteDocs(
+    new WriteIndexReadme(),
+    content.readme
+  );
+  writeIndexReadme.write();
+  Logger.info(`Write main index.md for the Github Pages`);
+}
+
 // write README.md for each pattern
-function writePatternReadme() {
+function writePatternReadmeFiles() {
   patterns.forEach((pattern) => {
     const { name, summary, refs, description, problem, example } =
       docs[pattern];
@@ -29,13 +52,23 @@ function writePatternReadme() {
       .setDescription(description)
       .setExample(name, example)
       .setReference(refs);
-    // .build(); // TODO ...
 
-    const writeReadmeFile = new WriteReadmeFile(name, content.readme);
-    writeReadmeFile.write();
-    Logger.info(`Write a README.md for ${name} pattern`);
+    const writeContentForDocs = new WriteDocs(
+      new WritePagesPatternReadme(pattern),
+      content.readme
+    );
+    writeContentForDocs.write();
+
+    const writeContentForPatterns = new WriteDocs(
+      new WritePatternReadme(pattern),
+      content.readme
+    );
+    writeContentForPatterns.write();
+
+    Logger.info(`Write a README.md for ${name} pattern and docs`);
   });
 }
 
 writeMainReadmeFile();
-writePatternReadme();
+writeIndexReadmeFile();
+writePatternReadmeFiles();

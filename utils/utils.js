@@ -51,7 +51,7 @@ export default class Utils {
     return example;
   }
 
-  static getPatternsSummary(type) {
+  static getPatternsSummary(type, page) {
     let content = "";
     patterns.forEach((pattern) => {
       const { category, name, summary, problem, description } = docs[pattern];
@@ -65,7 +65,9 @@ export default class Utils {
         content += this.formatLink(problem[0]);
         content += `\n#### Solution\n`;
         content += this.formatLink(description[0]);
-        content += `\n\nFor more: [${name} pattern >>>](${baseURL}/tree/main/patterns/${name})`;
+        content += page
+          ? `\n\nRead more here: [${name} pattern >>>](${baseURL}/tree/main/docs/${name})`
+          : `\n\nRead more here: [${name} pattern >>>](${baseURL}/tree/main/patterns/${name})`;
       }
     });
     return content;

@@ -1,12 +1,6 @@
 import * as docs from "@patternsandbox/docs";
 import Utils from "../utils";
 
-class Readme {
-  constructor(readme) {
-    this.readme = readme;
-  }
-}
-
 export default class ReadmeBuilder {
   setTitle(name) {
     this.readme = `# ${Utils.toTitleCase(name, ".")} Pattern`;
@@ -63,13 +57,13 @@ export default class ReadmeBuilder {
     return this;
   }
 
-  setMainReadme() {
+  setMainReadme({ page = false }) {
     const types = Object.keys(docs.types);
     this.readme = `# Design Patterns in JavaScript\n`;
     types.forEach((type) => {
       this.readme += `\n## ${Utils.toTitleCase(type)} Patterns\n`;
       this.readme += `\n ${docs.types[type]} \n`;
-      this.readme += Utils.getPatternsSummary(type);
+      this.readme += Utils.getPatternsSummary(type, page);
     });
     return this;
   }
@@ -77,9 +71,5 @@ export default class ReadmeBuilder {
   setMainReadmeReference() {
     this.readme += Utils.getMainReadmeReferences();
     return this;
-  }
-
-  build() {
-    return new Readme(this);
   }
 }
