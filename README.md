@@ -54,9 +54,13 @@ For more: [facade pattern >>>](https://github.com/patternsandbox/javascript/tree
 - [Refactoring Guru]
 - [Tc39 Proposal Decorators]
 - [Jar Gon]
+- [Mike Pennisi]
+- [Rip Tutorial]
 
 [Yash Sharma]: https://codeburst.io/builder-pattern-in-javascript-e5b13e4e51af
 [Addy Osmani]: https://addyosmani.com/resources/essentialjsdesignpatterns/book/
 [Refactoring Guru]: https://refactoring.guru/design-patterns/facade
 [Tc39 Proposal Decorators]: https://github.com/tc39/proposal-decorators
 [Jar Gon]: http://jargon.js.org/_glossary/FACTORY_PATTERN.md
+[Mike Pennisi]: https://bocoup.com/blog/the-strategy-pattern-in-javascript
+[Rip Tutorial]: https://riptutorial.com/javascript/example/9116/strategy

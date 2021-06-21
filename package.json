@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "JavaScript design pattern",
   "scripts": {
-    "lint": "npx eslint . --ext .json,.js --fix",
+    "lint:js": "npx eslint . --ext .json,.js --fix",
+    "lint:ts": "npx eslint . --ext .ts --fix",
     "test": "npx jest --collect-coverage",
     "pretty": "npx prettier --no-config './**/*.{ts,js,json}' --write",
     "build:readme": "npx babel-node utils/readme/index.js"
@@ -30,10 +31,11 @@
     "@babel/runtime": "7.14.5",
     "@types/jest": "26.0.23",
     "@types/node": "14.17.3",
-    "@typescript-eslint/eslint-plugin": "4.26.1",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
     "babel-eslint": "10.1.0",
     "babel-jest": "27.0.2",
-    "eslint": "7.28.0",
+    "eslint": "^7.29.0",
     "eslint-config-airbnb-base": "14.2.1",
     "eslint-config-prettier": "6.15.0",
     "eslint-plugin-import": "2.23.4",
@@ -58,7 +60,7 @@
     ]
   },
   "dependencies": {
-    "@patternsandbox/docs": "^1.0.12",
+    "@patternsandbox/docs": "^1.0.13",
     "pino": "6.11.3",
     "pino-pretty": "5.0.2"
   }

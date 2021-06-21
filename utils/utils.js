@@ -40,7 +40,7 @@ export default class Utils {
         `./patterns/${name}/examples/${ex}/${file}`,
         "utf8"
       );
-      example += "```javascript";
+      example += file.endsWith(".js") ? "```javascript" : "```typescript";
       example += `\n${data}\n`;
       example += "```";
       example += `\n__Listing ${mainIndex}.${

@@ -1,6 +1,7 @@
 import { writeFileSync } from "fs";
 import path from "path";
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const Logger = require("pino")({
   prettyPrint: { colorize: true },
 });

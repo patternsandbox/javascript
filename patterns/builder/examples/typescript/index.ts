@@ -5,7 +5,7 @@ interface ICar {
 }
 
 class Car {
-  private readonly car: ICar;
+  car: ICar;
 
   constructor(build: ICar) {
     this.car = build;
@@ -13,7 +13,7 @@ class Car {
 }
 
 export default class CarBuilder {
-  private readonly car: ICar;
+  car: ICar;
 
   constructor() {
     this.car = {

@@ -267,7 +267,7 @@ test("Calculate total", () => {
 __Listing 4.2: [builder/examples/sequential/test.js](https://github.com/patternsandbox/javascript/blob/main/patterns/builder/examples/sequential/test.js)__
 
 ### 5. Typescript
-```javascript
+```typescript
 interface ICar {
   make: string;
   model: string;
@@ -275,7 +275,7 @@ interface ICar {
 }
 
 class Car {
-  private readonly car: ICar;
+  car: ICar;
 
   constructor(build: ICar) {
     this.car = build;
@@ -283,7 +283,7 @@ class Car {
 }
 
 export default class CarBuilder {
-  private readonly car: ICar;
+  car: ICar;
 
   constructor() {
     this.car = {

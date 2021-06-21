@@ -85,6 +85,7 @@ function Car(spec) {
   this.model = spec.model;
   this.sunroof = spec.sunroof || false;
 
+  // eslint-disable-next-line func-names
   this.assemble = function () {
     return {
       body: this.body,
