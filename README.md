@@ -12,7 +12,7 @@ Imagine a complex object that requires laborious, step-by-step initialization of
 #### Solution
 A builder pattern is a design pattern that lets us extract the object construction out of its own class (its representation) so that it can be used for multiple different representations. One advantage to using this pattern is that it lets us build objects with one operation on top of another where we don’t need to call all operations simultaneously, only the ones that are needed to produce a particular output. ... [Yash Sharma]
 
-Read more here: [builder pattern >>>](https://patternsandbox.github.io/javascript/#builder-pattern
+Read more here: [builder pattern >>>](https://patternsandbox.github.io/javascript/#builder-pattern-1)
 ### Factory Pattern
 >When a function returns an object, we call it a factory function.
 
@@ -21,7 +21,7 @@ In class-based programming, the factory method pattern is a creational pattern t
 #### Solution
 The Factory pattern can be especially useful when applied to the following situations: When our object or component setup involves a high level of complexity. When we need to easily generate different instances of objects depending on the environment we are in. When we’re working with many small objects or components that share the same properties. When composing objects with instances of other objects that need only satisfy an API contract (a.k.a., duck typing) to work. This is useful for decoupling. ... [Addy Osmani]
 
-Read more here: [factory pattern >>>](https://patternsandbox.github.io/javascript/#factory-pattern
+Read more here: [factory pattern >>>](https://patternsandbox.github.io/javascript/#factory-pattern-1)
 ## Structural Patterns
 
  Stractural patterns are designed with regard to a class’s structure and composition. 
@@ -34,7 +34,7 @@ A common reason why developers use them is that their applications may contain f
 #### Solution
 Decorators are a proposal for extending JavaScript classes which is widely adopted among developers in transpiler environments, with broad interest in standardization. TC39 has been iterating on decorators proposals for over five years. ... [Tc39 Proposal Decorators]
 
-Read more here: [decorator pattern >>>](https://patternsandbox.github.io/javascript/#decorator-pattern
+Read more here: [decorator pattern >>>](https://patternsandbox.github.io/javascript/#decorator-pattern-1)
 ### Facade Pattern
 >The Façade pattern provides an interface which shields clients from complex functionality in one or more subsystems.
 
@@ -43,7 +43,7 @@ Imagine that you must make your code work with a broad set of objects that belon
 #### Solution
 A facade is a class that provides a simple interface to a complex subsystem which contains lots of moving parts. A facade might provide limited functionality in comparison to working with the subsystem directly. However, it includes only those features that clients really care about. ... [Refactoring Guru]
 
-Read more here: [facade pattern >>>](https://patternsandbox.github.io/javascript/#facade-pattern
+Read more here: [facade pattern >>>](https://patternsandbox.github.io/javascript/#facade-pattern-1)
 ## Behavioural Patterns
 
  Behavioural patterns are designed depending on how one class communicates with others. 
