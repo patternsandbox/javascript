@@ -32,6 +32,20 @@ function writeIndexReadmeFile() {
   const content = new ReadmeBuilder()
     .setMainReadme({ page: true })
     .setMainReadmeReference();
+
+  patterns.forEach((pattern) => {
+    const { name, summary, refs, description, problem, example } =
+      docs[pattern];
+    const details = new ReadmeBuilder()
+      .setTitle(name)
+      .setSummary(summary)
+      .setProblem(problem)
+      .setDescription(description)
+      .setExample(name, example)
+      .setReference(refs);
+    content.readme += details.readme;
+  });
+
   const writeIndexReadme = new WriteDocs(
     new WriteIndexReadme(),
     content.readme
@@ -40,35 +54,5 @@ function writeIndexReadmeFile() {
   Logger.info(`Write main index.md for the Github Pages`);
 }
 
-// write README.md for each pattern
-function writePatternReadmeFiles() {
-  patterns.forEach((pattern) => {
-    const { name, summary, refs, description, problem, example } =
-      docs[pattern];
-    const content = new ReadmeBuilder()
-      .setTitle(name)
-      .setSummary(summary)
-      .setProblem(problem)
-      .setDescription(description)
-      .setExample(name, example)
-      .setReference(refs);
-
-    const writeContentForDocs = new WriteDocs(
-      new WritePagesPatternReadme(pattern),
-      content.readme
-    );
-    writeContentForDocs.write();
-
-    const writeContentForPatterns = new WriteDocs(
-      new WritePatternReadme(pattern),
-      content.readme
-    );
-    writeContentForPatterns.write();
-
-    Logger.info(`Write a README.md for ${name} pattern and docs`);
-  });
-}
-
 writeMainReadmeFile();
 writeIndexReadmeFile();
-writePatternReadmeFiles();
