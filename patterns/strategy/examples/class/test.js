@@ -1,6 +1,6 @@
 import { BuildCar, EntryLevelCar, PerformantCar, PremiumCar } from "./index";
 
-test("buy premium car", () => {
+test("buy entry level  car", () => {
   const car = new BuildCar(new EntryLevelCar());
   const { driverAssistance, engine } = car.build();
 
@@ -8,7 +8,7 @@ test("buy premium car", () => {
   expect(engine).toEqual("V6");
 });
 
-test("buy premium car", () => {
+test("buy performant car", () => {
   const car = new BuildCar(new PerformantCar());
   const { driverAssistance, engine } = car.build();
 
