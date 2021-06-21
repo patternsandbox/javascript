@@ -34,18 +34,6 @@ export class WriteIndexReadme {
   }
 }
 
-export class WritePagesPatternReadme {
-  path;
-
-  constructor(pattern) {
-    this.path = path.resolve(__dirname, `../../docs/${pattern}/README.md`);
-  }
-
-  get path() {
-    return this.path;
-  }
-}
-
 export class WriteDocs {
   constructor(doc, content) {
     this.doc = doc;
